@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+    <!-- TODO: Update blank fragment layout -->
+    <include layout="@layout/tool_bar_colour"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_margin="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_below="@+id/tool_barLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="0.8">
+
+                <FrameLayout
+                    android:id="@+id/frame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/proffileImage"
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="@dimen/_120sdp"
+                        android:src="@drawable/ic_defult_user"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="0.5dp"/>
+
+                    <ImageView
+                        android:id="@+id/takeimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|bottom"
+                        android:src="@drawable/ic_camera"
+                        android:visibility="gone"
+                        android:layout_marginRight="@dimen/_10sdp"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/frame"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/primary_text"
+                    tools:text="@string/app_name"
+                    android:id="@+id/user_name_tv"/>
+            </RelativeLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:elevation="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/colorWhite"
+                android:id="@+id/top"
+                android:layout_weight="1.2">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:layout_margin="@dimen/_5sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Details"
+                        android:textColor="@color/primary_text" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:backgroundTint="@color/colorPrimary">
+
+                        <EditText
+                            android:id="@+id/user_name_etv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_username"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="Name"
+                            android:textColorHint="@color/colorPrimary"
+                            android:imeOptions="actionNext"
+                            android:inputType="text|textCapWords"
+                            android:paddingBottom="@dimen/_15sdp"
+                            android:textColor="@color/primary_text"
+                            android:enabled="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/student_layout">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:backgroundTint="@color/colorPrimary">
+
+                            <EditText
+                                android:id="@+id/father_name_etv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_username"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:hint="Father Name"
+                                android:textColorHint="@color/colorPrimary"
+                                android:imeOptions="actionNext"
+                                android:inputType="text|textCapWords"
+                                android:paddingBottom="@dimen/_15sdp"
+                                android:textColor="@color/primary_text"
+                                android:enabled="false"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:backgroundTint="@color/colorPrimary">
+
+                            <EditText
+                                android:id="@+id/mother_name_etv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_username"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:hint="Mother Name"
+                                android:textColorHint="@color/colorPrimary"
+                                android:imeOptions="actionNext"
+                                android:inputType="text|textCapWords"
+                                android:paddingBottom="@dimen/_15sdp"
+                                android:textColor="@color/primary_text"
+                                android:enabled="false"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:backgroundTint="@color/colorPrimary">
+
+                            <EditText
+                                android:id="@+id/dob_etv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_calender_colour"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:hint="DOB"
+                                android:textColorHint="@color/colorPrimary"
+                                android:imeOptions="actionNext"
+                                android:inputType="text|textCapWords"
+                                android:paddingBottom="@dimen/_15sdp"
+                                android:textColor="@color/primary_text"
+                                style="@style/InvisibleFocusHolder"
+                                android:enabled="false"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:backgroundTint="@color/colorPrimary">
+
+                        <EditText
+                            android:id="@+id/email_id_etv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_mail"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="Email ID"
+                            android:textColorHint="@color/colorPrimary"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:paddingBottom="@dimen/_15sdp"
+                            android:textColor="@color/primary_text"
+                            android:enabled="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:backgroundTint="@color/colorPrimary">
+
+                        <EditText
+                            android:id="@+id/mobile_etv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_mobile"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="Mobile"
+                            android:textColorHint="@color/colorPrimary"
+                            android:imeOptions="actionDone"
+                            android:inputType="phone"
+                            android:paddingBottom="@dimen/_15sdp"
+                            android:textColor="@color/primary_text"
+                            android:enabled="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/background_button"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Update Profile"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:id="@+id/signup_btn"
+                        android:visibility="gone"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/background_button"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Change Password"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:id="@+id/change_password_btn"
+                        android:layout_gravity="bottom"/>
+
+                </LinearLayout>
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+<ImageButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_edit_profile"
+    android:background="@android:color/transparent"
+    android:layout_margin="@dimen/_10sdp"
+    android:layout_alignParentRight="true"
+    android:id="@+id/edit_profile_img"/>
+</RelativeLayout>

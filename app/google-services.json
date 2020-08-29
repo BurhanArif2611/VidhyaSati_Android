@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "601750642874",
+    "firebase_url": "https://vidyasthali-1c86e.firebaseio.com",
+    "project_id": "vidyasthali-1c86e",
+    "storage_bucket": "vidyasthali-1c86e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601750642874:android:e01bec994e4585786e2283",
+        "android_client_info": {
+          "package_name": "com.mahavir_infotech.vidyasthali"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601750642874-im9n16tmgo3ui33bhqqnbah7a6mt372o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7Mxx-ROCBJ8paeMg1qOOos858SHGtRJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601750642874-im9n16tmgo3ui33bhqqnbah7a6mt372o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

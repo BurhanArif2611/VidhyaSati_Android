@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VIDYASTHALI</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="no_internet">Internet Not Found !</string>
+    <string name="no_data_found">No Data Found !</string>
+    <string name="no_class_found">Not Assaigned Any Class !</string>
+    <string name="internetnotfound">No Internet Found !</string>
+    <string name="view_select_file"><u>View File</u></string>
+    <string name="view_select_link"><u>View Link</u></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

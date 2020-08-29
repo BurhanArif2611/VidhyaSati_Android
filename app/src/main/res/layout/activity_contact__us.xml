@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Teacher.Contact_USActivity">
+<include layout="@layout/tool_bar_colour"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_barLayout">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_barLayout"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_10sdp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/colorPrimary">
+
+            <EditText
+                android:id="@+id/user_name_etv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_username"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/raleway_regular"
+                android:hint="Name"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionNext"
+                android:inputType="text|textCapWords"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/primary_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/colorPrimary">
+
+            <EditText
+                android:id="@+id/email_id_etv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_mail"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/raleway_regular"
+                android:hint="Email ID"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/primary_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/colorPrimary">
+
+            <EditText
+                android:id="@+id/mobile_etv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_mobile"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/raleway_regular"
+                android:hint="Mobile"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/primary_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/corner_border">
+
+            <EditText
+                android:id="@+id/type_assignment_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Message here ..."
+                android:padding="@dimen/_10sdp"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textColor="@color/primary_text" />
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/background_button"
+            android:text="Contact Us"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/mdtp_white"
+            android:id="@+id/contact_us_btn"
+            android:fontFamily="@font/poppins_regular"/>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

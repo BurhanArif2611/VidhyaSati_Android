@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/rv_item"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/date_linear_layout"
+        android:visibility="visible"
+        android:layout_marginTop="5dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:gravity="center_vertical"
+        android:id="@+id/date"
+        android:padding="5dp"
+        android:textColor="@color/primary_text"/></LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/chat_text_bg"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/from_layout"
+        android:orientation="vertical"
+        android:layout_below="@+id/date_linear_layout"
+        >
+   <!-- <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="3dp"
+
+        card_view:cardElevation="3dp"
+        app:cardBackgroundColor="@color/line_color">-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="g"
+            android:textColor="@color/primary_text"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:id="@+id/from_tv"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hhh"
+            android:textColor="@color/primary_text"
+            android:id="@+id/from_time_tv"
+            android:layout_margin="2dp"
+            android:textSize="10dp"
+          />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_symbol"
+            android:layout_margin="2dp"
+            android:id="@+id/message_seen_img"
+            />
+        </LinearLayout>
+   <!-- </android.support.v7.widget.CardView>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/to_layout"
+        android:layout_margin="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/chat_text_sender"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="2dp"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_below="@+id/date_linear_layout">
+     <!--   <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardElevation="3dp"
+            app:cardBackgroundColor="@color/colorWhitedark"
+            >-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hbcjkbkvhdkhhhh"
+                android:textColor="@color/primary_text"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:id="@+id/to_tv"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fd"
+            android:textColor="@color/primary_text"
+            android:id="@+id/to_time_tv"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="2dp"
+            android:textSize="10dp"/>
+     <!--   </android.support.v7.widget.CardView>-->
+    </LinearLayout>
+</RelativeLayout>

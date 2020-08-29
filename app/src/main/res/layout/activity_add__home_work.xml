@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Teacher.ADD_HomeWorkActivity">
+<include layout="@layout/tool_bar_colour"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@+id/tool_barLayout"
+        android:layout_margin="@dimen/_5sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/colorPrimary">
+
+            <EditText
+                android:id="@+id/home_date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_homework"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="HomeWork Date"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/primary_text"
+                style="@style/InvisibleFocusHolder"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/colorPrimary">
+
+            <EditText
+                android:id="@+id/select_class_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_classroom"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Select Class"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/primary_text"
+                style="@style/InvisibleFocusHolder"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/colorPrimary">
+
+            <EditText
+                android:id="@+id/select_subject_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_classroom"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Select Subject"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/primary_text"
+                style="@style/InvisibleFocusHolder"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/colorPrimary">
+
+            <EditText
+                android:id="@+id/submission_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Submission Date"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/primary_text"
+                style="@style/InvisibleFocusHolder"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/corner_border">
+
+            <EditText
+                android:id="@+id/type_assignment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Type Assignment here ..."
+                android:padding="@dimen/_10sdp"
+                android:textColorHint="@color/colorPrimary"
+                android:imeOptions="actionDone"
+                android:textColor="@color/primary_text" />
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/_8sdp">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_button"
+        android:text="Select File"
+        android:textColor="@color/colorWhite"
+        android:padding="@dimen/_5sdp"
+        android:id="@+id/select_file"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_tv"
+            android:gravity="start"
+            android:layout_gravity="start"
+            android:layout_margin="@dimen/_5sdp"/>
+
+    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_select_file"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:textColor="@color/primary_text"
+            android:id="@+id/view_notes_file_tv"
+            android:visibility="gone"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:id="@+id/sample_paper_layout"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="File"
+                android:textSize="@dimen/text_size_18"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:id="@+id/sample_paper_tv"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/logo"
+                android:id="@+id/sample_paper_img"
+                android:layout_below="@+id/sample_paper_tv"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_pdf"
+                android:id="@+id/sample_paper_img_btn"
+                android:background="@android:color/transparent"/>
+        </RelativeLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button"
+            android:text="Submit HomeWork"
+            android:textColor="@color/colorWhite"
+            android:padding="@dimen/_5sdp"
+            android:id="@+id/submit_btn"
+            android:layout_margin="@dimen/_10sdp"/>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

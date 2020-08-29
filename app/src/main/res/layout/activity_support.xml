@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/tool_bar_colour" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_barLayout"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_12sdp"
+                android:src="@drawable/ic_order_placed" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="Call Us For Any Query"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/dotted_border_rectangle"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:text="VIDYASTHALI Support Team"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    tools:text="+91 9340311301"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_20"
+                    android:id="@+id/contact_first_tv"/>
+<!--android:text="+91 6264323307"-->
+
+                <TextView
+                    android:id="@+id/firstContactBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_call_"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Call Now"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/dotted_border_rectangle"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:text="VIDYASTHALI Support Team"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_size_16" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    tools:text="burhanarif@gmail.com "
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_20"
+                    android:id="@+id/contact_second_tv"/>
+                <TextView
+                    android:id="@+id/secondContactBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_mail"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Email Now"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/dotted_border_rectangle"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:text="VIDYASTHALI Support Team"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_size_16" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    tools:text="+91 7898786485"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_size_20"
+                    android:id="@+id/contact_whats_up_tv"/>
+                <TextView
+                    android:id="@+id/whatsup_Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_whatsapp"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Chat Now"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="Address: Bhawarkua Indore(M.P.)"
+                android:textSize="@dimen/text_size_16"
+                android:id="@+id/address_tv"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
