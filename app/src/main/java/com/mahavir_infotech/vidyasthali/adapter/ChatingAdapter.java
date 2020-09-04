@@ -18,6 +18,8 @@ import com.mahavir_infotech.vidyasthali.activity.Student.ChatActivity;
 import com.mahavir_infotech.vidyasthali.database.UserProfileHelper;
 import com.mahavir_infotech.vidyasthali.models.ChatList_Model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class ChatingAdapter extends RecyclerView.Adapter<ChatingAdapter.MyViewHolder> {
@@ -45,11 +47,19 @@ public class ChatingAdapter extends RecyclerView.Adapter<ChatingAdapter.MyViewHo
     @Override
     public void onBindViewHolder(final ChatingAdapter.MyViewHolder holder, final int position) {
         ChatList_Model contestsResult = resultsList.get(position);
-
+        SimpleDateFormat mdformat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat mdformat1 = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = null;
+        try {
+            date = mdformat.parse(contestsResult.getDate());
+            System.out.println(mdformat1.format(date));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (resultsList.size() > 0) {
             if (position==0){
                 holder.date_linear_layout.setVisibility(View.VISIBLE);
-                holder.date.setText("---------------"+contestsResult.getDate()+"---------------");
+                holder.date.setText("---------------"+mdformat1.format(date)+"---------------");
             }
             else {
                 int listposition = position - 1;
@@ -59,12 +69,12 @@ public class ChatingAdapter extends RecyclerView.Adapter<ChatingAdapter.MyViewHo
                     holder.date_linear_layout.setVisibility(View.GONE);
                 } else {
                     holder.date_linear_layout.setVisibility(View.VISIBLE);
-                    holder.date.setText("---------------"+contestsResult.getDate()+"---------------");
+                    holder.date.setText("---------------"+mdformat1.format(date)+"---------------");
                 }
             }
         } else {
             holder.date_linear_layout.setVisibility(View.VISIBLE);
-            holder.date.setText("---------------"+contestsResult.getDate()+"---------------");
+            holder.date.setText("---------------"+mdformat1.format(date)+"---------------");
         }
 
         if (contestsResult.getReq_from().equals(UserProfileHelper.getInstance().getUserProfileModel().get(0).getUser_id())) {

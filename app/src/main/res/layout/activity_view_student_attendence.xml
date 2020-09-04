@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Student.ViewStudentAttendenceActivity">
+    <include layout="@layout/tool_bar_colour"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_calender_white"
+        android:background="@android:color/transparent"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:id="@+id/attendence_img_btn"/>
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_barLayout"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_class_found"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/text_size_20"
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/no_data_found_tv"
+        android:visibility="gone"/>
+</RelativeLayout>

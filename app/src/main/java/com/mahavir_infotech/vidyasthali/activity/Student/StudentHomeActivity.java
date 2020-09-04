@@ -29,7 +29,6 @@ import com.mahavir_infotech.vidyasthali.Utility.NetworkUtil;
 import com.mahavir_infotech.vidyasthali.activity.SelectUserTypeActivity;
 import com.mahavir_infotech.vidyasthali.activity.SupportActivity;
 import com.mahavir_infotech.vidyasthali.activity.Teacher.AboutActivity;
-import com.mahavir_infotech.vidyasthali.activity.Teacher.AttendenceListActivity;
 import com.mahavir_infotech.vidyasthali.activity.Teacher.Contact_USActivity;
 import com.mahavir_infotech.vidyasthali.activity.Teacher.EventActivity;
 import com.mahavir_infotech.vidyasthali.activity.Teacher.GelleryActivity;
@@ -124,6 +123,8 @@ public class StudentHomeActivity extends AppCompatActivity {
     TextView supportTv;
     @BindView(R.id.result_cardview)
     CardView resultCardview;
+    @BindView(R.id.class_name_tv)
+    TextView classNameTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,11 +135,17 @@ public class StudentHomeActivity extends AppCompatActivity {
 
             userNameTv.setText(UserProfileHelper.getInstance().getUserProfileModel().get(0).getDisplayName());
             userEmailTv.setText(UserProfileHelper.getInstance().getUserProfileModel().get(0).getEmaiiId());
+            if (UserProfileHelper.getInstance().getUserProfileModel().get(0).getRole().equals("parent")) {
+                classNameTv.setVisibility(View.GONE);
+            } else {
+                classNameTv.setText("Class Name :" + UserProfileHelper.getInstance().getUserProfileModel().get(0).getClass_name());
+            }
             if (UserProfileHelper.getInstance().getUserProfileModel().get(0).getProfile_pic() != null && !UserProfileHelper.getInstance().getUserProfileModel().get(0).getProfile_pic().equals("")) {
                 Picasso.with(StudentHomeActivity.this).load(UserProfileHelper.getInstance().getUserProfileModel().get(0).getProfile_pic()).placeholder(R.drawable.ic_defult_user).into(imageView);
             }
             if (UserProfileHelper.getInstance().getUserProfileModel().get(0).getRole().equals("parent")) {
                 monthlyPerformanceCardview.setVisibility(View.VISIBLE);
+                classNameTv.setVisibility(View.GONE);
             }
         }
         Get_Count();
@@ -222,7 +229,7 @@ public class StudentHomeActivity extends AppCompatActivity {
             case R.id.attendence_cardview:
                 Bundle bundle4 = new Bundle();
                 bundle4.putString("Check", "Student");
-                ErrorMessage.I(StudentHomeActivity.this, AttendenceListActivity.class, bundle4);
+                ErrorMessage.I(StudentHomeActivity.this, ViewStudentAttendenceActivity.class, bundle4);
                 break;
             case R.id.leave_cardview:
                 Bundle bundle5 = new Bundle();

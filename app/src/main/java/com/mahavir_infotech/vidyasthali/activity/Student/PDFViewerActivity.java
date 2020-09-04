@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
@@ -87,15 +89,26 @@ public class PDFViewerActivity extends BaseActivity implements OnPageChangeListe
         if (bundle != null) {
             titleTextTv.setText(bundle.getString("title"));
             //displayFromUri(Uri.parse(bundle.getString("image")));
-            try{
-            SAMPLE_FILE = bundle.getString("image");
-            ErrorMessage.E("SAMPLE_FILE"+SAMPLE_FILE);
-            if (!SAMPLE_FILE.equals("")) {
-                new DownloadTask(PDFViewerActivity.this, SAMPLE_FILE);
-            } else {
-                ErrorMessage.T(PDFViewerActivity.this,"File Not Found !");
-            }}
-          catch (Exception e){}
+            try {
+                SAMPLE_FILE = bundle.getString("image");
+                if (!SAMPLE_FILE.equals("")) {
+
+                    String last = SAMPLE_FILE.substring(SAMPLE_FILE.length() - 1);
+                    ErrorMessage.E("SAMPLE_FILE" + last+">>"+SAMPLE_FILE.length());
+                    if (last.equals(".")) {
+                        SAMPLE_FILE = SAMPLE_FILE.substring(0, SAMPLE_FILE.lastIndexOf(".")) + "";
+                        ErrorMessage.E("SAMPLE_FILE if>>" + SAMPLE_FILE);
+                        new DownloadTask(PDFViewerActivity.this, SAMPLE_FILE);
+                    } else {
+                        ErrorMessage.E("SAMPLE_FILE" + SAMPLE_FILE);
+                        new DownloadTask(PDFViewerActivity.this, SAMPLE_FILE);
+                    }
+                } else {
+                    ErrorMessage.T(PDFViewerActivity.this, "File Not Found !");
+                }
+            } catch (Exception e) {
+                ErrorMessage.E("SAMPLE_FILE Exception>>" + e.toString());
+            }
 
         }
     }
@@ -231,6 +244,10 @@ public class PDFViewerActivity extends BaseActivity implements OnPageChangeListe
 
 
             downloadFileName = downloadUrl.substring(downloadUrl.lastIndexOf('/'), downloadUrl.length());//Create file name by picking download file name from URL
+            if (downloadFileName.contains(".doc") || downloadFileName.contains(".docx")|| downloadFileName.contains(".pdf")|| downloadFileName.contains(".PDF"))
+            {}else {
+                downloadFileName=downloadFileName+".pdf";
+            }
             Log.e(TAG, downloadFileName);
 
             //Start Downloading Task
@@ -257,8 +274,13 @@ public class PDFViewerActivity extends BaseActivity implements OnPageChangeListe
                     if (outputFile != null) {
                         progressDialog.dismiss();
                         //ContextThemeWrapper ctw = new ContextThemeWrapper( context, R.style.Theme_AlertDialog);
-                        File pdfFile = new File(Environment.getExternalStorageDirectory() + "/CodePlayon/" + downloadFileName);  // -> filename = maven.pdf
-                        path = Uri.fromFile(pdfFile);
+                        File pdfFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/CodePlayon/" + downloadFileName);  // -> filename = maven.pdf
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            path = FileProvider.getUriForFile(PDFViewerActivity.this, "com.mahavir_infotech.vidyasthali.provider", pdfFile);
+                        } else {
+                            path = Uri.fromFile(pdfFile);
+                        }
+
                         displayFromUri(path);
 
                        /* final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
@@ -395,8 +417,11 @@ public class PDFViewerActivity extends BaseActivity implements OnPageChangeListe
         PDFViewerActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                noDataFoundTv.setVisibility(View.VISIBLE);
-                pdfView.setVisibility(View.GONE);
+              /*  noDataFoundTv.setVisibility(View.VISIBLE);
+                pdfView.setVisibility(View.GONE);*/
+                try {
+                    new DownloadTask(PDFViewerActivity.this, SAMPLE_FILE+".");
+                }catch (Exception e){}
 
             }
         });
@@ -405,12 +430,17 @@ public class PDFViewerActivity extends BaseActivity implements OnPageChangeListe
     private void openDownloadedFolder(Uri path) {
         //First check if SD Card is present or not
         try {
-            ErrorMessage.E("Path??"+ path );
+            ErrorMessage.E("Path??" + path);
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.setDataAndType(path, "application/vnd.ms-excel");
+            if (path.toString().contains(".docx") || path.toString().contains(".doc")) {
+                intent.setDataAndType(path, "application/msword");
+            } else {
+                intent.setDataAndType(path, "application/msword");
+            }
             intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             startActivity(intent);
+
         } catch (Exception e) {
             ErrorMessage.E("Exception" + e.toString());
             Toast.makeText(this, "Application not found", Toast.LENGTH_SHORT).show();

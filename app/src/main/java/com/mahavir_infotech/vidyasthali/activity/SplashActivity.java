@@ -79,7 +79,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         });
-     /*   if (Build.VERSION.SDK_INT >= 23) {
+        if (Build.VERSION.SDK_INT >= 23) {
             if (checkPermission()) {
                 ErrorMessage.E("checkPermission is come");
                 checkTimerIntent();
@@ -90,7 +90,7 @@ public class SplashActivity extends AppCompatActivity {
             }
         } else {
             checkTimerIntent();
-        }*/
+        }
     }
 
     private void requestPermission() {

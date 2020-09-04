@@ -37,6 +37,7 @@ public class EventDetailActivity extends BaseActivity {
     @BindView(R.id.describtion_tv)
     TextView describtionTv;
     Result result;
+
     @Override
     protected int getContentResId() {
         return R.layout.activity_event_detail;
@@ -50,13 +51,14 @@ public class EventDetailActivity extends BaseActivity {
         titleTxt.setText("Detail");
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-             result = (Result) bundle.getSerializable("AllData");
+            result = (Result) bundle.getSerializable("AllData");
             titleTv.setText(result.getTitle());
             describtionTv.setText(result.getDescription());
             addressTv.setText(result.getAddress());
-
-            Glide.with(EventDetailActivity.this).load(result.getPhoto().getUrl()).placeholder(R.drawable.ic_logo).into(eventImg);
-
+            try {
+                Glide.with(EventDetailActivity.this).load(result.getPhoto().getUrl()).placeholder(R.drawable.ic_logo).into(eventImg);
+            } catch (Exception e) {
+            }
             SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             SimpleDateFormat output = new SimpleDateFormat("dd MMM yyyy");
             SimpleDateFormat time = new SimpleDateFormat("hh:mm a");
@@ -64,7 +66,7 @@ public class EventDetailActivity extends BaseActivity {
             //  ErrorMessage.E("Date"+jsonObject.getString("lastModified"));
             try {
                 // output.setTimeZone(TimeZone.getTimeZone("IMP"));
-               // input.setTimeZone(TimeZone.getTimeZone("IMP"));
+                // input.setTimeZone(TimeZone.getTimeZone("IMP"));
                 d = input.parse(result.getDate());
             } catch (Exception e) {
                 e.printStackTrace();

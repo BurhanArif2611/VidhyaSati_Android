@@ -319,6 +319,7 @@ public class OtpActivity extends BaseActivity implements TextWatcher {
                                         userProfileModel.setRole(jsonObject1.getString("role"));
                                         userProfileModel.setUserPhone(jsonObject1.getString("class_id"));
                                         userProfileModel.setProfile_pic("123");
+                                        userProfileModel.setClass_name("");
                                         ErrorMessage.E("Exception" + userProfileModel.getDisplayName());
                                         UserProfileHelper.getInstance().delete();
                                         UserProfileHelper.getInstance().insertUserProfileModel(userProfileModel);

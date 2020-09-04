@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
                                 userProfileModel.setEmaiiId(jsonObject1.getString("email"));
                                 userProfileModel.setRole(jsonObject1.getString("role"));
                                 userProfileModel.setUserPhone("123");
-                                userProfileModel.setProfile_pic("123");
+                                userProfileModel.setProfile_pic(jsonObject1.getString("profile_image"));
                                 ErrorMessage.E("Exception" + userProfileModel.getDisplayName());
                                 UserProfileHelper.getInstance().insertUserProfileModel(userProfileModel);
                                 ErrorMessage.I(LoginActivity.this, TeacherHomeActivity.class, null);
@@ -228,7 +228,8 @@ public class LoginActivity extends AppCompatActivity {
                                 userProfileModel.setEmaiiId(jsonObject1.getString("email"));
                                 userProfileModel.setRole(jsonObject1.getString("role"));
                                 userProfileModel.setUserPhone(jsonObject1.getString("class_id"));
-                                userProfileModel.setProfile_pic("123");
+                                userProfileModel.setProfile_pic(jsonObject1.getString("profile_image"));
+                                userProfileModel.setClass_name(jsonObject1.getString("class_name"));
                                 ErrorMessage.E("Exception" + userProfileModel.getDisplayName());
                                 UserProfileHelper.getInstance().insertUserProfileModel(userProfileModel);
                                 ErrorMessage.I(LoginActivity.this, StudentHomeActivity.class, null);

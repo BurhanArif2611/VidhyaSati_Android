@@ -55,6 +55,7 @@ public class UserProfileHelper {
         values.put(UserProfileModel.KEY_Phone, userDataModel.getUserPhone());
         values.put(UserProfileModel.KEY_AuthToken, userDataModel.getAuthToken());
         values.put(UserProfileModel.KEY_Role, userDataModel.getRole());
+        values.put(UserProfileModel.KEY_Class_Name, userDataModel.getClass_name());
 
 
         if (!isExist(userDataModel)) {
@@ -85,6 +86,7 @@ public class UserProfileHelper {
                 userDataModel.setUserPhone(clientCur.getString(clientCur.getColumnIndex(UserProfileModel.KEY_Phone)));
                 userDataModel.setAuthToken(clientCur.getString(clientCur.getColumnIndex(UserProfileModel.KEY_AuthToken)));
                 userDataModel.setRole(clientCur.getString(clientCur.getColumnIndex(UserProfileModel.KEY_Role)));
+                userDataModel.setClass_name(clientCur.getString(clientCur.getColumnIndex(UserProfileModel.KEY_Class_Name)));
                 userItem.add(userDataModel);
 
             } while ((clientCur.moveToNext()));

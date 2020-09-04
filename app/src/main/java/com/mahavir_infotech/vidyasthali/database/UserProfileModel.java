@@ -12,7 +12,7 @@ public class  UserProfileModel {
     public static final String KEY_Phone = "userPhone";
     public static final String KEY_AuthToken = "authToken";
     public static final String KEY_Role = "role";
-
+    public static final String KEY_Class_Name = "class_name";
 
 
     public static void creteTable(SQLiteDatabase db) {
@@ -24,6 +24,7 @@ public class  UserProfileModel {
                 + KEY_Profile_Pic + " text, "
                 + KEY_AuthToken + " text, "
                 + KEY_Role + " text, "
+                + KEY_Class_Name + " text, "
                 + KEY_Phone + " text " +
                 ")";
         db.execSQL(CREATE_STUDENTTABLE);
@@ -32,7 +33,7 @@ public class  UserProfileModel {
     public static void dropTable(SQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
     }
-    String user_id,displayName,emaiiId,profile_pic,userPhone,authToken,role;
+    String user_id,displayName,emaiiId,profile_pic,userPhone,authToken,role,class_name;
 
     public String getAuthToken() {
         return authToken;
@@ -94,9 +95,13 @@ public class  UserProfileModel {
         this.displayName = displayName;
     }
 
+    public String getClass_name() {
+        return class_name;
+    }
 
-
-
+    public void setClass_name(String class_name) {
+        this.class_name = class_name;
+    }
 }
 
 

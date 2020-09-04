@@ -75,6 +75,16 @@
                         android:textColor="@color/colorWhite"
                         android:fontFamily="@font/poppins_regular"
                         />
+                    <TextView
+                        android:id="@+id/class_name_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_18"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/colorWhite"
+                        android:fontFamily="@font/poppins_regular"
+                        />
 
                     <TextView
                         android:layout_width="match_parent"
